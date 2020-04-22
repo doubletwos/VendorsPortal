@@ -1,0 +1,33 @@
+﻿@model IEnumerable<VendorsPortal.Models.VendorType>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VendorTypeName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VendorTypeName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.VendorTypeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.VendorTypeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.VendorTypeId })
+        </td>
+    </tr>
+}
+
+</table>

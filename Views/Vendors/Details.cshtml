@@ -1,0 +1,82 @@
+﻿@model VendorsPortal.Models.Vendor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vendor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VendorType.VendorTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendorType.VendorTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VendorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VendorMobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendorMobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VendorTelephone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VendorTelephone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegistrationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegistrationDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VendorId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
