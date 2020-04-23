@@ -2,31 +2,36 @@
 	ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-	<h1>VendorsPortal</h1>
-	<p class="lead">Application Development In Progress. 
-	@*ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.*@</p>
-	@*<p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
-</div>
+	<div class="jumbotron">
+		<h1>VendorsPortal</h1>
+		<p class="lead">
+			Application Development In Progress.
+			<hr/>
+			@*ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.*@
+		</p>
+		@*<p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
 
 
+		<div class="row">
+			<div class="col-md-4">
+				<p>Vendors Registration Form</p>
+				<p><input type="button" value="Register" onclick="location.href='@Url.Action("Create", "Vendors")'" class="btn btn-default " /></p>
+			</div>
+			<div class="col-md-4">
+				<p>Admin Page</p>
+				<p><input type="button" value="Portal Admin Users" onclick="location.href='@Url.Action("AdminPage", "Home")'" class="btn btn-default " /></p>
+			</div>
+			<div class="col-md-4">
+				<p>Coming Soon</p>
+				<p><input type="button" value="Coming Soon" onclick="location.href='@Url.Action("", "")'" class="btn btn-default " /></p>
 
-<div class="row">
-	<div class="col-md-4">
-		<p>Vendors Registration Form</p>
-		<p><input type="button" value="Register" onclick="location.href='@Url.Action("Create", "Vendors")'" class="btn btn-default " /></p>
+			</div>
+
+		</div>
 	</div>
-	<div class="col-md-4">
-		<p>Admin Page</p>
-		<p><input type="button" value="Portal Admin Users" onclick="location.href='@Url.Action("AdminPage", "Home")'" class="btn btn-default " /></p>
-	</div>
-	<div class="col-md-4">
-		<p>Coming Soon</p>
-		<p><input type="button" value="Coming Soon" onclick="location.href='@Url.Action("", "")'" class="btn btn-default " /></p>
 
-	</div>
 
-</div>
+
 
 
 
