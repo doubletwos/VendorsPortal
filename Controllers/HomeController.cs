@@ -1,16 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using VendorsPortal.Models;
 
 namespace VendorsPortal.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private ApplicationDbContext db = new ApplicationDbContext(); 
+
+        public ActionResult Index(string VendorTypeId, string searcharea)
         {
-            return View();
+
+            
+            var vendors = db.Vendors
+            .Include(v => v.VendorType)
+            .ToList();
+
+            ViewBag.VendorTypeId = new SelectList(db.VendorTypes, "VendorTypeId", "VendorTypeName"/*, vendor.VendorTypeId*/);
+
+
+
+            return View(vendors);
+
+           
         }
 
         public ActionResult About()

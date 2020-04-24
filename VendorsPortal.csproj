@@ -185,8 +185,13 @@
     <Compile Include="Migrations\202004221902052_UpdateDb.designer.cs">
       <DependentUpon>202004221902052_UpdateDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004242044482_Area.cs" />
+    <Compile Include="Migrations\202004242044482_Area.designer.cs">
+      <DependentUpon>202004242044482_Area.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Area.cs" />
     <Compile Include="Models\File.cs" />
     <Compile Include="Models\FileType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -288,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004221902052_UpdateDb.resx">
       <DependentUpon>202004221902052_UpdateDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004242044482_Area.resx">
+      <DependentUpon>202004242044482_Area.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -38,10 +38,19 @@ namespace VendorsPortal.Models
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? RegistrationDate { get; set; }
 
-        [Display(Name = "Vendor Type")]
+       
         [Required(ErrorMessage = "Please Select Your Vendor Type")]
+        [Display(Name = "Vendor Type")]
         public int VendorTypeId { get; set; }
         public VendorType VendorType { get; set; }
+
+
+        [Required(ErrorMessage = "Please Select Area")]
+        [Display(Name = "Area")]
+        public int AreaId { get; set; }
+        public Area Area { get; set; }
+
+
 
         public string ContactFullName
         {

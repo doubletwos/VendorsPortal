@@ -1,58 +1,115 @@
-﻿@{
+﻿@model IEnumerable<VendorsPortal.Models.Vendor>
+@{
 	ViewBag.Title = "Home Page";
 }
-
-	<div class="jumbotron">
-		<h1>VendorsPortal</h1>
-		<p class="lead">
-			Application Development In Progress.
-			<hr/>
-			@*ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.*@
-		</p>
-		@*<p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
-
-
-		<div class="row">
-			<div class="col-md-4">
-				<p>Vendors Registration Form</p>
-				<p><input type="button" value="Register" onclick="location.href='@Url.Action("Create", "Vendors")'" class="btn btn-default " /></p>
-			</div>
-			<div class="col-md-4">
-				<p>Admin Page</p>
-				<p><input type="button" value="Portal Admin Users" onclick="location.href='@Url.Action("AdminPage", "Home")'" class="btn btn-default " /></p>
-			</div>
-			<div class="col-md-4">
-				<p>Coming Soon</p>
-				<p><input type="button" value="Coming Soon" onclick="location.href='@Url.Action("", "")'" class="btn btn-default " /></p>
-
-			</div>
-
+<br />
+<br />
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+	<div class="row">
+		<div class="col-md-4">
+			@Html.DropDownList("VendorTypeId", null, string.Empty, htmlAttributes: new { @class = "form-control" })
+			
+		</div>
+		<div class="col-md-4">
+			<input type="text" name="searcharea" class="form-control" placeholder="" id="searchtrade"/>
+		</div>
+		<div class="col-md-4">
+			<button type="button" class="btn btn-default">Search</button>
 		</div>
 	</div>
+}
+<br />
+<br />
+<table class="table">
+	@foreach (var item in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.VendorType.VendorTypeName)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.VendorName)
+			</td>
+			<td>
+				<img src="~/File?id=@item.Files.First(f => f.FileType == VendorsPortal.Models.FileType.Avatar).FileId" alt="avatar" width="100" />
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { id = item.VendorId }) |
+				@Html.ActionLink("Details", "Details", new { id = item.VendorId }) |
+				@Html.ActionLink("Delete", "Delete", new { id = item.VendorId })
+			</td>
+		</tr>
+	}
+</table>
 
 
+
+@*@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+	{
+
+		<div class="form-inline">
+			<div class="form-group">
+				<label for="email">Vendor Type:</label>
+				@Html.DropDownList("VendorTypeId", null, htmlAttributes: new { @class = "form-control" })
+
+				<label for="email">Area:</label>
+				<input type="text" name="searchtrade" class="form-control" placeholder="" id="searchtrade" />
+				<input type="hidden" id="hfTrade" name="searchtrade" />
+				<button type="button" class="btn btn-default">Search</button>
+			</div>
+		</div>
+
+	}*@
 
 
 
 
 @*<div class="row">
-	<div class="col-md-4">
-		<h2>Getting started</h2>
-		<p>
-			ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-			enables a clean separation of concerns and gives you full control over markup
-			for enjoyable, agile development.
-		</p>
-		<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+		<div class="col-md-4">
+			<h2>Getting started</h2>
+			<p>
+				ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+				enables a clean separation of concerns and gives you full control over markup
+				for enjoyable, agile development.
+			</p>
+			<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+		</div>
+		<div class="col-md-4">
+			<h2>Get more libraries</h2>
+			<p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+			<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+		</div>
+		<div class="col-md-4">
+			<h2>Web Hosting</h2>
+			<p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+			<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+		</div>
+	</div>*@
+
+<div class="jumbotron">
+	<h1>VendorsPortal</h1>
+	<p class="lead">
+		Application Development In Progress.
+		<hr />
+		@*ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.*@
+	</p>
+	@*<p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+
+	<div class="row">
+		<div class="col-md-4">
+			<p>Vendors Registration Form</p>
+			<p><input type="button" value="Register" onclick="location.href='@Url.Action("Create", "Vendors")'" class="btn btn-default " /></p>
+		</div>
+		<div class="col-md-4">
+			<p>Admin Page</p>
+			<p><input type="button" value="Portal Admin Users" onclick="location.href='@Url.Action("AdminPage", "Home")'" class="btn btn-default " /></p>
+		</div>
+		<div class="col-md-4">
+			<p>Coming Soon</p>
+			<p><input type="button" value="Coming Soon" onclick="location.href='@Url.Action("", "")'" class="btn btn-default " /></p>
+
+		</div>
+
 	</div>
-	<div class="col-md-4">
-		<h2>Get more libraries</h2>
-		<p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-		<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-	</div>
-	<div class="col-md-4">
-		<h2>Web Hosting</h2>
-		<p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-		<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-	</div>
-</div>*@
+</div>

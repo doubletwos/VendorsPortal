@@ -39,8 +39,9 @@ namespace VendorsPortal.Controllers
         // GET: Vendors/Create
         public ActionResult Create()
         {
-           
-            ViewBag.VendorTypeId = new SelectList(db.VendorTypes, "VendorTypeId", "VendorTypeName");
+
+
+            ViewBag.VendorTypeId = new SelectList(db.VendorTypes.OrderBy(s=>s.VendorTypeName), "VendorTypeId", "VendorTypeName");
             return View();
         }
 
@@ -76,7 +77,7 @@ namespace VendorsPortal.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.VendorTypeId = new SelectList(db.VendorTypes, "VendorTypeId", "VendorTypeName", vendor.VendorTypeId);
+            ViewBag.VendorTypeId = new SelectList(db.VendorTypes.OrderByDescending(s => s.VendorTypeName), "VendorTypeId", "VendorTypeName", vendor.VendorTypeId);
             return View(vendor);
         }
 

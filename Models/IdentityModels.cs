@@ -22,7 +22,8 @@ namespace VendorsPortal.Models
     {
         public DbSet<File> Files { get; set; }
         public DbSet<Vendor> Vendors { get; set; }
-        public DbSet<VendorType> VendorTypes{get;set;}  
+        public DbSet<VendorType> VendorTypes{get;set;}
+        public DbSet<Area> Areas { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
