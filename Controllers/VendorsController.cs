@@ -45,14 +45,30 @@ namespace VendorsPortal.Controllers
         }
 
         // POST: Vendors/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "VendorId,VendorName,Email,VendorMobile,VendorTelephone,ContactFirstName,ContactLastName,RegistrationDate,VendorTypeId")] Vendor vendor)
+        public ActionResult Create(Vendor vendor, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {
+                if (upload != null)
+                {
+                    var avatar = new File
+                    {
+                        FileName = System.IO.Path.GetFileName(upload.FileName),
+                        FileType = FileType.Avatar,
+                        ContentType = upload.ContentType
+
+
+                    };
+
+                    using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                    {
+                        avatar.Content = reader.ReadBytes(upload.ContentLength);
+                    }
+                    vendor.Files = new List<File> { avatar };
+
+                }
                
                 vendor.RegistrationDate = DateTime.Now;
                 db.Vendors.Add(vendor);

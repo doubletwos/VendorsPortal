@@ -9,6 +9,6 @@ namespace VendorsPortal.Models
     {
         Avatar = 1, Photo,
 
-        Avatar1 = 2, Photo1
+        
     }
 }
