@@ -1,14 +1,46 @@
 ﻿@model IEnumerable<VendorsPortal.Models.Vendor>
 
 @{
-	ViewBag.Title = "Index";
+	ViewBag.Title = "IndexAd";
 }
 
-<h2>Index</h2>
+<h2></h2>
 
-<p>
+@*<p>
 	@Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
+
+
+
+<div class="jumbotron">
+	<div class="row">
+		<div class="col-md-4">
+			<button class="btn btn-success" type="button">
+				Registered Vendors
+				<span class="badge">
+			@Model.Count().ToString()
+
+				</span>
+			</button>
+		</div>
+
+		<div class="col-md-4">
+			<button class="btn btn-primary" type="button">
+				Messages <span class="badge">4</span>
+			</button>
+		</div>
+
+		<div class="col-md-4">
+			<button class="btn btn-primary" type="button">
+				Messages <span class="badge">4</span>
+			</button>
+		</div>
+
+
+	</div>
+
+</div>
+
 <table class="table">
 	<tr>
 		@*<th>
@@ -17,6 +49,11 @@
 		<th>
 			@Html.DisplayNameFor(model => model.VendorName)
 		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Area.AreaName)
+		</th>
+
+
 		<th>
 			@Html.DisplayNameFor(model => model.Email)
 		</th>
@@ -34,18 +71,19 @@
 		</th>
 		<th>
 			@Html.DisplayNameFor(model => model.RegistrationDate)
-		</th>
-		<th></th>*@
+		</th>*@
+		<th></th>
 	</tr>
 
 @foreach (var item in Model) {
 <tr>
-
-
-
 	<td>
 		@Html.DisplayFor(modelItem => item.VendorType.VendorTypeName)
 	</td>
+	<td>
+		@Html.DisplayFor(modelItem => item.Area.AreaName)
+	</td>
+
 	<td>
 		@Html.DisplayFor(modelItem => item.VendorName)
 	</td>
@@ -58,15 +96,15 @@
 	<td>
 		@Html.DisplayFor(modelItem => item.VendorTelephone)
 	</td>
-
 	<td>
 		@Html.DisplayFor(modelItem => item.ContactFullName)
 	</td>
+
 	<td>
 		@Html.DisplayFor(modelItem => item.RegistrationDate)
 	</td>
 	<td>
-		<img src="~/File?id=@item.Files.First(f => f.FileType == VendorsPortal.Models.FileType.Avatar).FileId" alt="avatar" width="100" class="img-rounded"/>
+		<img src="~/File?id=@item.Files.First(f => f.FileType == VendorsPortal.Models.FileType.Avatar).FileId" alt="avatar" width="100" class="img-rounded" />
 	</td>
 	<td>
 		@Html.ActionLink("Edit", "Edit", new { id = item.VendorId }) |

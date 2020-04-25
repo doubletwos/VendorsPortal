@@ -1,7 +1,174 @@
-﻿
+﻿@model VendorsPortal.Models.Vendor
+
+
 @{
-    ViewBag.Title = "AdminPage";
+	ViewBag.Title = "AdminPage";
 }
 
-<h2>AdminPage</h2>
+
+
+
+
+<div class="jumbotron">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="btn-group">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Vendor Type Settings <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href=@Url.Action("Index","VendorTypes")>Vendor Type List</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href=@Url.Action("Create","VendorTypes")>Create New Vendor Type</a></li>
+					@*<li><a href="#">Something else here</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Separated link</a></li>*@
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="btn-group">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Vendors <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href=@Url.Action("IndexAd","Vendors")>Vendor Type List</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href=@Url.Action("Create","Vendors")>Register New Vendor</a></li>
+					@*<li><a href="#">Something else here</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Separated link</a></li>*@
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="btn-group">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Area Settings <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href=@Url.Action("Index","Areas")>Areas</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href=@Url.Action("Create","Areas")>Create New Area</a></li>
+					@*<li><a href="#">Something else here</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Separated link</a></li>*@
+				</ul>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+	</div>
+
+
+</div>
+
+
+<div class="jumbotron">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="btn-group">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					To Be Developed  <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href=@Url.Action("Index","Areas")>Areas</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href=@Url.Action("Create","Areas")>Create New Area</a></li>
+					@*<li><a href="#">Something else here</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Separated link</a></li>*@
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="btn-group">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					To Be Developed  <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href=@Url.Action("Index","Areas")>Areas</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href=@Url.Action("Create","Areas")>Create New Area</a></li>
+					@*<li><a href="#">Something else here</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Separated link</a></li>*@
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="btn-group">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					To Be Developed <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href=@Url.Action("RegisteredUsers","Account")>To be developed</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href=@Url.Action("RegisteredUsers","Account")>To be developed</a></li>
+					@*<li><a href="#">Something else here</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Separated link</a></li>*@
+				</ul>
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

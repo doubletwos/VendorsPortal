@@ -1,82 +1,56 @@
 ﻿@model VendorsPortal.Models.Vendor
 
 @{
-    ViewBag.Title = "Details";
+	ViewBag.Title = "Profile";
 }
 
-<h2>Details</h2>
+	<h2>@Html.DisplayFor(model => model.VendorName)</h2>
 
-<div>
-    <h4>Vendor</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.VendorType.VendorTypeName)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.VendorType.VendorTypeName)
-        </dd>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<img src="~/File?id=@Model.Files.First(f => f.FileType == FileType.Avatar).FileId" alt="avatar" class="img-rounded" width="300" />
+		</div>
+		<div class="col-md-6">
+			<i class="fab fa-creative-commons-nd"></i> : @Html.DisplayFor(model => model.VendorType.VendorTypeName)
+			<hr />
+			<i class="fas fa-at"></i> : @Html.DisplayFor(model => model.Email)
+			<hr />
+			<i class="fas fa-mobile-alt"></i> : @Html.DisplayFor(model => model.VendorMobile)
+			<hr />
+			<i class="fas fa-phone-alt"></i> : @Html.DisplayFor(model => model.VendorTelephone)
+			<hr />
+			<i class="fas fa-map-marker-alt"></i> : @Html.DisplayFor(model => model.Area.AreaName)
+			<hr />
+			<i class="fas fa-user-tie"></i> : @Html.DisplayFor(model => model.ContactFullName)
+			<hr />
+			<i class="fas fa-calendar-alt"></i> : @Html.DisplayFor(model => model.RegistrationDate)
+			<hr />
+			<i class="fab fa-internet-explorer"></i> :
 
-        <dt>
-            @Html.DisplayNameFor(model => model.VendorName)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.VendorName)
-        </dd>
+		</div>
+		</div>
+	</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.VendorMobile)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.VendorMobile)
-        </dd>
+<address>
+	<strong>Twitter, Inc.</strong><br>
+	1355 Market Street, Suite 900<br>
+	San Francisco, CA 94103<br>
+	<abbr title="Phone">P:</abbr> (123) 456-7890
+</address>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.VendorTelephone)
-        </dt>
+<address>
+	<strong>Full Name</strong><br>
+	<a href="mailto:#">first.last@example.com</a>
+</address>
 
-        <dd>
-            @Html.DisplayFor(model => model.VendorTelephone)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactFirstName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactFirstName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactLastName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactLastName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RegistrationDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RegistrationDate)
-        </dd>
-
-    </dl>
-</div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.VendorId }) |
-    @Html.ActionLink("Back to List", "Index")
+	@Html.ActionLink("Edit", "Edit", new { id = Model.VendorId }) |
+	@Html.ActionLink("Back to List", "Index")
 </p>

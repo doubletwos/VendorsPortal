@@ -17,8 +17,61 @@ namespace VendorsPortal.Controllers
         // GET: Vendors
         public ActionResult Index()
         {
-            var vendors = db.Vendors.Include(v => v.VendorType);
-            return View(vendors.ToList());
+            var vendors = db.Vendors
+                .Include(v => v.VendorType)
+                .Include(a => a.Area)
+                .ToList(); 
+            
+                return View(vendors);
+        }
+
+
+
+        public ActionResult IndexAd(string VendorTypeId, string searcharea)
+        {
+            ViewBag.VendorTypeId = new SelectList(db.VendorTypes, "VendorTypeName", "VendorTypeName");
+            var vendors = db.Vendors
+            .Include(v => v.VendorType)
+            .Include(a => a.Area)
+            .ToList();
+            ////// returns default value if both are and vendor type are empty
+            if (string.IsNullOrWhiteSpace(VendorTypeId) && string.IsNullOrWhiteSpace(searcharea))
+            {
+                return View(vendors);
+            }
+            ////// returns values of all vendors in an area if area is selected but no vendor - works fine
+            if (string.IsNullOrWhiteSpace(VendorTypeId) && !string.IsNullOrWhiteSpace(searcharea))
+            {
+                return View(db.Vendors
+               .Include(t => t.VendorType)
+               .Include(a => a.Area)
+               .Where(a => a.Area.AreaName == searcharea)
+               .ToList());
+            }
+            ////// returns values of all vendors if vendor is selected but area isnt - works fine
+            if (!string.IsNullOrWhiteSpace(VendorTypeId) && string.IsNullOrWhiteSpace(searcharea))
+            {
+                return View(db.Vendors
+               .Include(t => t.VendorType)
+               .Include(a => a.Area)
+               .Where(t => t.VendorType.VendorTypeName == VendorTypeId)
+               .ToList());
+            }
+            //// returns values of matching vendors if both area and vendor type are provided
+            ///
+            if (!string.IsNullOrWhiteSpace(VendorTypeId) && !string.IsNullOrWhiteSpace(searcharea))
+            //if (!( string.IsNullOrWhiteSpace(VendorTypeId) && !(string.IsNullOrWhiteSpace(searcharea))))
+            {
+                return View(db.Vendors
+               .Include(t => t.VendorType)
+               .Include(a => a.Area)
+               .Where(t => t.VendorType.VendorTypeName == VendorTypeId)
+               .Where(a => a.Area.AreaName == searcharea)
+               .ToList());
+            }
+            else
+                return View(vendors);
+
         }
 
         // GET: Vendors/Details/5
@@ -29,6 +82,8 @@ namespace VendorsPortal.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Vendor vendor = db.Vendors.Find(id);
+          
+
             if (vendor == null)
             {
                 return HttpNotFound();
@@ -42,6 +97,7 @@ namespace VendorsPortal.Controllers
 
 
             ViewBag.VendorTypeId = new SelectList(db.VendorTypes.OrderBy(s=>s.VendorTypeName), "VendorTypeId", "VendorTypeName");
+            ViewBag.AreaId = new SelectList(db.Areas.OrderBy(a => a.AreaName), "AreaId", "AreaName");
             return View();
         }
 
