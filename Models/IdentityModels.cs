@@ -1,4 +1,7 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -16,7 +19,42 @@ namespace VendorsPortal.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public string   OrganisationName { get; set; }
+
+        public string VendorTelephone { get; set; }
+
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime? RegistrationDate { get; set; }
+
+        public int VendorTypeId { get; set; }
+        public VendorType VendorType { get; set; }
+
+        public int AreaId { get; set; }
+        public Area Area { get; set; }
+
+        public string ContactFullName
+        {
+            get
+            {
+                return FirstName  + LastName;
+            }
+        }
+        //public virtual ICollection<File> Files { get; set; }
+
+
+
+
     }
+
+
+
+
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

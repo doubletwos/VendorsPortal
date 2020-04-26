@@ -20,5 +20,10 @@ namespace VendorsPortal.Models
 
         public int VendorId { get; set; }
         public virtual Vendor Vendor { get; set; }
+
+
+        //public int Id { get; set; }
+        //public virtual ApplicationUser ApplicationUser { get; set; }
+
     }
 }

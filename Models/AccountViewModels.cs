@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace VendorsPortal.Models
@@ -79,6 +80,19 @@ namespace VendorsPortal.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+
+
+        //Added Code
+        public string OrganisationName { get; set; }
+        public string VendorTelephone { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public DateTime? RegistrationDate { get; set; }
+        public VendorType VendorType { get; set; }
+        public Area Area { get; set; }
+        //public virtual ICollection<File> Files { get; set; }
+
     }
 
     public class ResetPasswordViewModel

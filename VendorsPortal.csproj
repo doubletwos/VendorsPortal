@@ -190,6 +190,10 @@
     <Compile Include="Migrations\202004242044482_Area.designer.cs">
       <DependentUpon>202004242044482_Area.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004261420020_NewDimension.cs" />
+    <Compile Include="Migrations\202004261420020_NewDimension.designer.cs">
+      <DependentUpon>202004261420020_NewDimension.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Area.cs" />
@@ -320,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004242044482_Area.resx">
       <DependentUpon>202004242044482_Area.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004261420020_NewDimension.resx">
+      <DependentUpon>202004261420020_NewDimension.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

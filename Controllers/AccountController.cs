@@ -15,6 +15,7 @@ namespace VendorsPortal.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -139,7 +140,10 @@ namespace VendorsPortal.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ViewBag.VendorTypeId = new SelectList(db.VendorTypes.OrderBy(s => s.VendorTypeName), "VendorTypeId", "VendorTypeName");
+            ViewBag.AreaId = new SelectList(db.Areas.OrderBy(a => a.AreaName), "AreaId", "AreaName");
             return View();
+            
         }
 
         //
@@ -153,6 +157,16 @@ namespace VendorsPortal.Controllers
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
+
+                user.OrganisationName = model.OrganisationName;
+                user.VendorTelephone = model.VendorTelephone;
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
+                user.RegistrationDate = DateTime.Now;
+                user.VendorType = model.VendorType;
+                user.Area = model.Area;
+
+
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
@@ -168,8 +182,12 @@ namespace VendorsPortal.Controllers
                 AddErrors(result);
             }
 
+            ViewBag.VendorTypeId = new SelectList(db.VendorTypes.OrderBy(s => s.VendorTypeName), "VendorTypeId", "VendorTypeName");
+            ViewBag.AreaId = new SelectList(db.Areas.OrderBy(a => a.AreaName), "AreaId", "AreaName");
             // If we got this far, something failed, redisplay form
             return View(model);
+           
+
         }
 
         //
