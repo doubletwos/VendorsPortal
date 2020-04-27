@@ -20,35 +20,7 @@ namespace VendorsPortal.Models
             return userIdentity;
         }
 
-        public string   OrganisationName { get; set; }
-
-        public string VendorTelephone { get; set; }
-
-        public string FirstName { get; set; }
-
-        public string LastName { get; set; }
-
-        [DataType(DataType.DateTime)]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
-        public DateTime? RegistrationDate { get; set; }
-
-        public int VendorTypeId { get; set; }
-        public VendorType VendorType { get; set; }
-
-        public int AreaId { get; set; }
-        public Area Area { get; set; }
-
-        public string ContactFullName
-        {
-            get
-            {
-                return FirstName  + LastName;
-            }
-        }
-        //public virtual ICollection<File> Files { get; set; }
-
-
-
+        
 
     }
 

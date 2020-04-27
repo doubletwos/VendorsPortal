@@ -158,13 +158,7 @@ namespace VendorsPortal.Controllers
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
 
-                user.OrganisationName = model.OrganisationName;
-                user.VendorTelephone = model.VendorTelephone;
-                user.FirstName = model.FirstName;
-                user.LastName = model.LastName;
-                user.RegistrationDate = DateTime.Now;
-                user.VendorType = model.VendorType;
-                user.Area = model.Area;
+              
 
 
                 if (result.Succeeded)
