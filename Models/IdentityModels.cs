@@ -20,7 +20,12 @@ namespace VendorsPortal.Models
             return userIdentity;
         }
 
-        
+
+        public VendorArea VendorAreas { get; set; }
+        public int VendorAreasId { get; set; }  
+
+
+
 
     }
 
@@ -34,6 +39,9 @@ namespace VendorsPortal.Models
         public DbSet<Vendor> Vendors { get; set; }
         public DbSet<VendorType> VendorTypes{get;set;}
         public DbSet<Area> Areas { get; set; }
+        public DbSet<VendorArea> VendorAreas { get; set; }
+
+
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

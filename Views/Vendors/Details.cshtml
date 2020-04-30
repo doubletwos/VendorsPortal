@@ -4,7 +4,22 @@
 	ViewBag.Title = "Profile";
 }
 
-	<h2>@Html.DisplayFor(model => model.VendorName)</h2>
+
+@if (Session["vendorId"] == null)
+{
+	Response.Redirect("~Login/Index");
+}
+
+
+@if ((string)Session["vendorId"] != (Model.VendorId).ToString())
+{
+	Response.Redirect("~Login/Index");
+}
+
+
+
+
+<h2>@Html.DisplayFor(model => model.VendorName)</h2>
 
 
 <div class="container">
@@ -31,8 +46,8 @@
 
 
 		</div>
-		</div>
 	</div>
+</div>
 
 
 

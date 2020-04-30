@@ -140,8 +140,11 @@ namespace VendorsPortal.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            ViewBag.VendorTypeId = new SelectList(db.VendorTypes.OrderBy(s => s.VendorTypeName), "VendorTypeId", "VendorTypeName");
-            ViewBag.AreaId = new SelectList(db.Areas.OrderBy(a => a.AreaName), "AreaId", "AreaName");
+
+            //ViewBag.VendorTypeId = new SelectList(db.VendorTypes.OrderBy(s => s.VendorTypeName), "VendorTypeId", "VendorTypeName");
+            //ViewBag.AreaId = new SelectList(db.Areas.OrderBy(a => a.AreaName), "AreaId", "AreaName");
+            //ViewBag.VendorAreaId = new SelectList(db.VendorAreas.OrderBy(a => a.VendorAreaName), "Id", "VendorAreaName");
+
             return View();
             
         }
@@ -177,7 +180,7 @@ namespace VendorsPortal.Controllers
             }
 
             ViewBag.VendorTypeId = new SelectList(db.VendorTypes.OrderBy(s => s.VendorTypeName), "VendorTypeId", "VendorTypeName");
-            ViewBag.AreaId = new SelectList(db.Areas.OrderBy(a => a.AreaName), "AreaId", "AreaName");
+            ViewBag.VendorArea = new SelectList(db.VendorAreas.OrderBy(a => a.VendorAreaName), "Id", "VendorAreaName");
             // If we got this far, something failed, redisplay form
             return View(model);
            
