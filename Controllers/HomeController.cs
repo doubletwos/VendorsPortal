@@ -21,6 +21,7 @@ namespace VendorsPortal.Controllers
             .Include(v => v.VendorType)
             .Include(a => a.Area)
             .ToList();
+
             ////// returns default value if both are and vendor type are empty
             if (string.IsNullOrWhiteSpace(VendorTypeId) && string.IsNullOrWhiteSpace(searcharea))
             {
@@ -73,7 +74,35 @@ namespace VendorsPortal.Controllers
                 return HttpNotFound();
             }
             return View(vendor);
+
+
+
         }
+
+
+        public ActionResult Details1(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Vendor vendor = db.Vendors.Find(id);
+            if (vendor == null)
+            {
+                return HttpNotFound();
+            }
+           
+            return RedirectToAction("Details", "Vendors", new { id });
+
+
+        }
+
+
+
+
+
+
+
 
 
 

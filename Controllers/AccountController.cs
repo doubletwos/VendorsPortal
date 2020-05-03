@@ -179,8 +179,7 @@ namespace VendorsPortal.Controllers
                 AddErrors(result);
             }
 
-            ViewBag.VendorTypeId = new SelectList(db.VendorTypes.OrderBy(s => s.VendorTypeName), "VendorTypeId", "VendorTypeName");
-            ViewBag.VendorArea = new SelectList(db.VendorAreas.OrderBy(a => a.VendorAreaName), "Id", "VendorAreaName");
+          
             // If we got this far, something failed, redisplay form
             return View(model);
            

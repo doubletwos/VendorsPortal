@@ -38,6 +38,7 @@ namespace VendorsPortal.Controllers
         // GET: Areas/Create
         public ActionResult Create()
         {
+
             return View();
         }
 

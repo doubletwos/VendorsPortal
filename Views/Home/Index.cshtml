@@ -2,11 +2,55 @@
 @{
 	ViewBag.Title = "Home Page";
 }
+
+
+
+
 <br />
-<p>Register your business</p>
-<p><input type="button" value="Register" onclick="location.href='@Url.Action("Create", "Vendors")'" class="btn btn-default " /></p>
-<p>Sign in</p>
-<p><input type="button" value="Sign in" onclick="location.href='@Url.Action("Index", "Login")'" class="btn btn-default " /></p>
+
+
+
+
+@Html.Partial("_Secure")
+
+
+
+@*<div class="container">
+		@if (Session["vendorId"] == null)
+		{
+			<input type="button" value="Sign in" onclick="location.href='@Url.Action("Index", "Login")'" class="btn btn-default " /> <input type="button" value="Register" onclick="location.href='@Url.Action("Create", "Vendors")'" class="btn btn-default " />
+		}
+
+		@if (Session["vendorId"] != null)
+		{
+			<input type="button" value="Log off" onclick="location.href='@Url.Action("LogOut", "Login")'" class="btn btn-default " />
+		}
+	</div>*@
+
+
+
+
+
+
+
+@*<div class="row">
+		<div class="col-md-6">
+			<p>Register your business</p>
+			<p><input type="button" value="Register" onclick="location.href='@Url.Action("Create", "Vendors")'" class="btn btn-default " /></p>
+		</div>
+
+		<div class="col-md-6">
+			<p>Sign in</p>
+			<p><input type="button" value="Sign in" onclick="location.href='@Url.Action("Index", "Login")'" class="btn btn-default " /></p>
+		</div>
+	</div>*@
+
+
+
+
+
+
+
 
 <br />
 
@@ -20,14 +64,14 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="form-group">
-						@Html.DropDownList("VendorTypeId", null, string.Empty, htmlAttributes: new { @class = "form-control",  @style = "width:300px;" })
+						@Html.DropDownList("VendorTypeId", null, string.Empty, htmlAttributes: new { @class = "form-control", @style = "width:300px;" })
 
 
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
-						<input type="text" name="searcharea" class="form-control" placeholder="" id="searcharea"  width="500" />
+						<input type="text" name="searcharea" class="form-control" placeholder="" id="searcharea" width="500" />
 					</div>
 				</div>
 
@@ -63,7 +107,9 @@
 
 			</td>
 			<td>
-				@Html.ActionLink("Profile", "Details", new { id = item.VendorId }) 
+				@Html.ActionLink("Profile", "Details", new { id = item.VendorId })
+
+
 			</td>
 		</tr>
 	}

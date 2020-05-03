@@ -174,7 +174,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\VendorAreasController.cs" />
     <Compile Include="Controllers\VendorsController.cs" />
     <Compile Include="Controllers\VendorTypesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -212,6 +211,14 @@
     <Compile Include="Migrations\202004282129570_errormessage.designer.cs">
       <DependentUpon>202004282129570_errormessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005011510039_fix4.cs" />
+    <Compile Include="Migrations\202005011510039_fix4.designer.cs">
+      <DependentUpon>202005011510039_fix4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005021951586_cleanup.cs" />
+    <Compile Include="Migrations\202005021951586_cleanup.designer.cs">
+      <DependentUpon>202005021951586_cleanup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Area.cs" />
@@ -220,7 +227,6 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Vendor.cs" />
-    <Compile Include="Models\VendorArea.cs" />
     <Compile Include="Models\VendorType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -316,12 +322,8 @@
     <Content Include="webfonts\fa-solid-900.ttf" />
     <Content Include="webfonts\fa-solid-900.woff" />
     <Content Include="webfonts\fa-solid-900.woff2" />
-    <Content Include="Views\VendorAreas\Create.cshtml" />
-    <Content Include="Views\VendorAreas\Delete.cshtml" />
-    <Content Include="Views\VendorAreas\Details.cshtml" />
-    <Content Include="Views\VendorAreas\Edit.cshtml" />
-    <Content Include="Views\VendorAreas\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Shared\_Secure.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -364,6 +366,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004282129570_errormessage.resx">
       <DependentUpon>202004282129570_errormessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005011510039_fix4.resx">
+      <DependentUpon>202005011510039_fix4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005021951586_cleanup.resx">
+      <DependentUpon>202005021951586_cleanup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

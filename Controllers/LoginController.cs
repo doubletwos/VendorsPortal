@@ -36,6 +36,15 @@ namespace VendorsPortal.Controllers
                 return RedirectToAction("Details", "Vendors", new { id = vendordetails.VendorId });
             }
         }
+
+
+        public ActionResult LogOut()
+        {
+            Session.Abandon();
+
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 
 

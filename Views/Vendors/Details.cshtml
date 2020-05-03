@@ -7,22 +7,33 @@
 
 @if (Session["vendorId"] == null)
 {
-	Response.Redirect("~Login/Index");
+	Response.Redirect("~/Login/Index");
 }
 
 
 @if ((string)Session["vendorId"] != (Model.VendorId).ToString())
 {
-	Response.Redirect("~Login/Index");
+	Response.Redirect("~/Login/Index");
 }
 
 
 
 
-<h2>@Html.DisplayFor(model => model.VendorName)</h2>
+
 
 
 <div class="container">
+	<div class="jumbotron">
+		<h4>Hello, @Html.DisplayFor(model => model.ContactFullName) </h4>
+	
+		
+	</div>
+
+
+	<br />
+
+
+
 	<div class="row">
 		<div class="col-md-6">
 			<img src="~/File?id=@Model.Files.First(f => f.FileType == FileType.Avatar).FileId" alt="avatar" class="img-rounded" width="300" />

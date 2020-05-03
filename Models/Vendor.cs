@@ -69,7 +69,7 @@ namespace VendorsPortal.Models
         {
             get
             {
-                return ContactFirstName + " , " + ContactLastName;
+                return ContactFirstName + " "+ ContactLastName;
             }
         }
 

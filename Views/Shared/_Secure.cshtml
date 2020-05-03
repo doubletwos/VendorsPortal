@@ -1,0 +1,29 @@
+﻿@model IEnumerable<VendorsPortal.Models.Vendor>
+
+<br />
+<div class="nav navbar-nav navbar-right">
+	@if (Session["vendorId"] == null)
+	{
+		<input type="button" value="Sign in" onclick="location.href='@Url.Action("Index", "Login")'" class="btn btn-default " /> <input type="button" value="Register" onclick="location.href='@Url.Action("Create", "Vendors")'" class="btn btn-default " />
+	}
+
+	@if (Session["vendorId"] != null)
+	{
+		<input type="button" value="Log off" onclick="location.href='@Url.Action("LogOut", "Login")'" class="btn btn-default " />
+		@Html.ActionLink("Profile", "Details1", "Home", new { id = Model.FirstOrDefault()?.VendorId ?? 0 /*Null case*/}, new { @class = "btn btn-default" })
+
+
+
+	}
+</div>
+
+
+<br />
+
+
+
+
+
+
+
+

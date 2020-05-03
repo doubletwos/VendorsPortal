@@ -72,7 +72,7 @@ namespace VendorsPortal.Models
 
          
 
-        public IEnumerable<VendorArea> VendorAreas { get; set; }
+      
 
 
         [Required]
