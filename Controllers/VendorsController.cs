@@ -26,6 +26,15 @@ namespace VendorsPortal.Controllers
         }
 
 
+        [ChildActionOnly]
+        public ActionResult Vends()
+        {
+            return PartialView("_Secure");
+        }
+
+
+
+
 
         public ActionResult IndexAd(string VendorTypeId, string searcharea)
         {
@@ -77,17 +86,21 @@ namespace VendorsPortal.Controllers
         // GET: Vendors/Details/5
         public ActionResult Details(int? id)
         {
+
+            var vendor = db.Vendors
+                .Include(t => t.VendorType)
+                 .Include(a => a.Area)
+                .SingleOrDefault(c => c.VendorId == id);
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Vendor vendor = db.Vendors.Find(id);
-          
-
             if (vendor == null)
             {
                 return HttpNotFound();
             }
+
             return View(vendor);
         }
 

@@ -20,6 +20,7 @@ namespace VendorsPortal.Controllers
 
         }
 
+
         [HttpPost]
         public ActionResult Signin(Vendor vendor)
         {
@@ -32,7 +33,8 @@ namespace VendorsPortal.Controllers
             else
             {
                 Session["vendorId"] = vendordetails.VendorId.ToString();
-                Session["Email"] = vendor.Email.ToString();
+                Session["Email"] = vendordetails.Email.ToString();
+                Session["BusinessName"] = vendordetails.VendorName;
                 return RedirectToAction("Details", "Vendors", new { id = vendordetails.VendorId });
             }
         }
