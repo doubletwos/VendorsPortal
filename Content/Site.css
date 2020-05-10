@@ -30,16 +30,72 @@ textarea {
 }
 
 
- .jumbotron-test {
+.jumbotron-test {
+    background-size: cover;
     padding-top: 0px;
     padding-bottom: 0px;
     background-image: url('Images/HomeBG.jpg');
-    background-size: contain;
     background-repeat: no-repeat;
-    width: 100%; /* make sure to define width to fill container */
-    height: 100px; /* define the height in pixels or make sure   */
-    /* you have something in your div with height */
-    /* so you can see your image */
-    max-width: 1400px; /* define the max width */
+    width: 100%;
+    height: 100px;
+    max-width: 1400px;
 }
+
+
+
+
+#businessName {
+    color: dodgerblue;
+    font-size: 18px;
+   padding-top:30px;
+}
+
+#firstcell {
+    border: 2px solid whitesmoke;
+    border-right: none;
+    
+}
+
+
+#secondcell {
+    border: 2px solid whitesmoke;
+    border-left: none;
+}
+
+#area {
+    border: 2px solid whitesmoke;
+}
+
+#type {
+    border: 2px solid whitesmoke;
+}
+
+#contact {
+    border: 2px solid whitesmoke;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    background-color: whitesmoke;
+}
+
+#buttons {
+    border: 2px solid whitesmoke;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+    background-color: whitesmoke;
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0 40px;
+}
+
+
+
+
+
+
+
 
