@@ -8,22 +8,26 @@ namespace VendorsPortal.Models
 {
     public class File
     {
+
+        
         public int FileId { get; set; }
+
         [StringLength(255)]
         public string FileName { get; set; }
-
+        public FileType FileType { get; set; }
         [StringLength(100)]
         public string ContentType { get; set; }
-        public byte[] Content { get; set; }
-        public FileType FileType { get; set; }
 
+
+        public byte[] Content { get; set; }
 
         public int VendorId { get; set; }
         public virtual Vendor Vendor { get; set; }
-
-
-        //public int Id { get; set; }
-        //public virtual ApplicationUser ApplicationUser { get; set; }
-
     }
+
+
+  
+
+
 }
+

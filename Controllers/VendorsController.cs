@@ -136,7 +136,7 @@ namespace VendorsPortal.Controllers
                     {
                         avatar.Content = reader.ReadBytes(upload.ContentLength);
                     }
-                    vendor.Files = new List<File> { avatar };
+                    vendor.Files = new List<File> {avatar};
 
                 }
                

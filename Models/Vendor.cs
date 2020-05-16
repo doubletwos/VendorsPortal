@@ -8,6 +8,13 @@ namespace VendorsPortal.Models
 {
     public class Vendor
     {
+
+        public Vendor()
+        {
+            Files = new List<File>();
+        }
+
+
         public int VendorId { get; set; }
 
         [Display(Name = "Business Name")]
