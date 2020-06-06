@@ -9,12 +9,7 @@ namespace VendorsPortal.Models
     public class Vendor
     {
 
-        public Vendor()
-        {
-            Files = new List<File>();
-        }
-
-
+   
         public int VendorId { get; set; }
 
         [Display(Name = "Business Name")]
@@ -81,6 +76,9 @@ namespace VendorsPortal.Models
         }
 
         public virtual ICollection<File> Files { get; set; }
+
+
+        public virtual ICollection<Quote> Quotes { get; set; }
 
     }
 }

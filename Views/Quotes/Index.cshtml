@@ -1,0 +1,70 @@
+﻿@model IEnumerable<VendorsPortal.Models.Quote>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+
+
+
+<table class="table  table-bordered">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.ContactFullName)
+		</th>
+	
+
+		<th>
+			@Html.DisplayNameFor(model => model.Telephone)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Email)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.EventType)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.BriefDescription)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Budget)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.EventDate)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.DateConfirmed)
+		</th>
+
+		<th></th>
+	</tr>
+
+	@foreach (var item in Model)
+	{
+<tr>
+
+	<td>@item.ContactFullName</td>
+	<td>@item.Telephone</td>
+	<td>@item.Email</td>
+	<td>@item.EventType</td>
+	<td>@item.BriefDescription</td>
+	<td>@item.Budget</td>
+	<td>@item.EventDate</td>
+	<td>@item.DateConfirmed</td>
+
+
+
+
+
+
+	<td>
+		@Html.ActionLink("Edit", "Edit", new { id = item.QuoteId }) |
+		@Html.ActionLink("Details", "Details", new { id = item.QuoteId }) |
+		@Html.ActionLink("Delete", "Delete", new { id = item.QuoteId }) |
+		@Html.ActionLink("Respond", "Create", "QuotesProvided", new { id = item.QuoteId }, null)
+
+	</td>
+</tr>
+	}
+
+</table>

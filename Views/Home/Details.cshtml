@@ -20,74 +20,32 @@
 <div>
 	<h4>Vendor</h4>
 	<hr />
-	<dl class="dl-horizontal">
-		<dt>
-			@Html.DisplayNameFor(model => model.VendorType.VendorTypeName)
-		</dt>
+	<div class="row">
+		<div class="col-md-6">
+			<img src="~/File?id=@Model.Files.First(f => f.FileType == FileType.Avatar).FileId" alt="avatar" class="img-rounded" width="300" />
+		</div>
+		<div class="col-md-6">
+			<i class="fab fa-creative-commons-nd"></i> : @Html.DisplayFor(model => model.VendorType.VendorTypeName)
+			<hr />
+			<i class="fas fa-at"></i> :    <a href="mailto:#">@Html.DisplayFor(model => model.Email)</a>
+			<hr />
+			<i class="fas fa-mobile-alt"></i> : @Html.DisplayFor(model => model.VendorMobile)
+			<hr />
+			<i class="fas fa-phone-alt"></i> : @Html.DisplayFor(model => model.VendorTelephone)
+			<hr />
+			<i class="fas fa-map-marker-alt"></i> : @Html.DisplayFor(model => model.Area.AreaName)
+			<hr />
+			<i class="fas fa-user-tie"></i> : @Html.DisplayFor(model => model.ContactFullName)
+			<hr />
+			<i class="fas fa-calendar-alt"></i> : @Html.DisplayFor(model => model.RegistrationDate)
+			<hr />
+			<i class="fab fa-internet-explorer"></i> :
 
-		<dd>
-			@Html.DisplayFor(model => model.VendorType.VendorTypeName)
-		</dd>
 
-		<dt>
-			@Html.DisplayNameFor(model => model.VendorName)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.VendorName)
-		</dd>
-
-		<dt>
-			@Html.DisplayNameFor(model => model.Email)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.Email)
-		</dd>
-
-		<dt>
-			@Html.DisplayNameFor(model => model.VendorMobile)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.VendorMobile)
-		</dd>
-
-		<dt>
-			@Html.DisplayNameFor(model => model.VendorTelephone)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.VendorTelephone)
-		</dd>
-
-		<dt>
-			@Html.DisplayNameFor(model => model.ContactFirstName)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.ContactFirstName)
-		</dd>
-
-		<dt>
-			@Html.DisplayNameFor(model => model.ContactLastName)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.ContactLastName)
-		</dd>
-
-		<dt>
-			@Html.DisplayNameFor(model => model.RegistrationDate)
-		</dt>
-
-		<dd>
-			@Html.DisplayFor(model => model.RegistrationDate)
-		</dd>
-
-	</dl>
+		</div>
+	</div>
 </div>
 <p>
-	@Html.ActionLink("Edit", "Edit", new { id = Model.VendorId }) |
+	 |
 	@Html.ActionLink("Back to List", "Index")
 </p>

@@ -22,18 +22,28 @@
 
 
 
+
+
+
 <div class="container">
 	<div class="jumbotron">
 		<div class="row">
 
-			<div class="col-md-4">
-					@Html.ActionLink("Home", "Index", "Home") 
+			<div class="col-md-3">
+				@Html.ActionLink("Home", "Index", "Home")
 			</div>
-			<div class="col-md-4">
-					@Html.ActionLink("Edit Profile", "Edit", new { id = Model.VendorId }) 
+			<div class="col-md-3">
+				@Html.ActionLink("Edit Profile", "Edit", new { id = Model.VendorId })
 			</div>
-			<div class="col-md-4">
-					@Html.ActionLink("Something Useful", "Edit", new { id = Model.VendorId }) 
+			<div class="col-md-3">
+				@Html.ActionLink("Quotes", "QuotesProvided", "Quotes", new { id = Model.VendorId }, null)
+			</div>
+
+
+
+
+			<div class="col-md-3">
+				@Html.ActionLink("Something Useful", "Edit", new { id = Model.VendorId })
 			</div>
 
 

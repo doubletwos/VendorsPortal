@@ -41,53 +41,54 @@
 		<br />
 		<br />
 	</div>
-	<table class="table table-condensed table-hover ">
+	<table class="table  table-bordered ">
 		@foreach (var item in Model)
 		{
-		<tr>
-			<td id="firstcell">
-				<div id="businessName"> <strong>  @Html.DisplayFor(modelItem => item.VendorName)</strong></div>
-				<br />
-				<strong>@Html.DisplayFor(modelItem => item.VendorType.VendorTypeName)</strong> in <strong> @Html.DisplayFor(modelItem => item.Area.AreaName)</strong>
-				<br />
-				<br />
-				<div id="contact">
-					<strong><i class="fas fa-phone-alt"></i> </strong> @Html.DisplayFor(modelItem => item.VendorTelephone)
-					<br/>
-					<strong><i class="fas fa-mobile-alt"></i> </strong> @Html.DisplayFor(modelItem => item.VendorMobile)
-				</div>
-			</td>
+			<tr>
+				<td id="firstcell">
+					<div id="businessName"> <strong>  @Html.DisplayFor(modelItem => item.VendorName)</strong></div>
+					<br />
+					<strong>@Html.DisplayFor(modelItem => item.VendorType.VendorTypeName)</strong> in <strong> @Html.DisplayFor(modelItem => item.Area.AreaName)</strong>
+					<br />
+					<br />
+					<div id="contact">
+						<strong><i class="fas fa-phone-alt"></i> </strong> @Html.DisplayFor(modelItem => item.VendorTelephone)
+						<br />
+						<strong><i class="fas fa-mobile-alt"></i> </strong> @Html.DisplayFor(modelItem => item.VendorMobile)
+					</div>
+				</td>
 
-			<td id="secondcell">
-				<div id="reviews">
-					Reviews will be coming here 
-				</div>
-				<br />
-				<br />
-				<div id="buttons">
-
-				
-
-				</div>
-			</td>
-
-			<td id="secondcell">
-				<div id="image">
-					<img src="~/File?id=@item.Files.First(f => f.FileType == VendorsPortal.Models.FileType.Avatar).FileId" alt="avatar" width="100" height="100" class="img-rounded" />
-				</div>
-				<br />
-				<br />
-				<div id="buttons">
-
-					@Html.ActionLink("Profile", "Details", new { id = item.VendorId }) | Quote | Email
-
-				</div>
-			</td>
+				<td id="secondcell">
+					<div id="reviews">
+						Reviews will be coming here
+					</div>
+					<br />
+					<br />
+					<div id="buttons">
 
 
 
+					</div>
+				</td>
 
-		</tr>
+				<td id="secondcell">
+					<div id="image">
+						<img src="~/File?id=@item.Files.First(f => f.FileType == VendorsPortal.Models.FileType.Avatar).FileId" alt="avatar" width="100" height="100" class="img-rounded" />
+					</div>
+					<br />
+					<br />
+					<div id="buttons">
+
+						@Html.ActionLink("Profile", "Details", new { id = item.VendorId }) | @Html.ActionLink("Request Quote", "Create",
+"Quotes", new { id = item.VendorId }, null) 	 | Email
+
+					</div>
+				</td>
+
+
+
+
+			</tr>
 		}
 	</table>
 </body>

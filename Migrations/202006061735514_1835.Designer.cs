@@ -7,13 +7,13 @@ namespace VendorsPortal.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class fix4 : IMigrationMetadata
+    public sealed partial class _1835 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(fix4));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_1835));
         
         string IMigrationMetadata.Id
         {
-            get { return "202005011510039_fix4"; }
+            get { return "202006061735514_1835"; }
         }
         
         string IMigrationMetadata.Source

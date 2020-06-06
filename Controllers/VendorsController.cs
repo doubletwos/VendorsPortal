@@ -90,6 +90,7 @@ namespace VendorsPortal.Controllers
             var vendor = db.Vendors
                 .Include(t => t.VendorType)
                  .Include(a => a.Area)
+                 .Include(q => q.Quotes)
                 .SingleOrDefault(c => c.VendorId == id);
 
             if (id == null)

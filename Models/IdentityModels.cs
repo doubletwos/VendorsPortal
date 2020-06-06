@@ -32,7 +32,9 @@ namespace VendorsPortal.Models
         public DbSet<Vendor> Vendors { get; set; }
         public DbSet<VendorType> VendorTypes{get;set;}
         public DbSet<Area> Areas { get; set; }
-     
+        public DbSet<Quote> Quotes { get; set; }
+        public DbSet<QuotesProvided> QuotesProvided { get; set; }
+
 
 
 

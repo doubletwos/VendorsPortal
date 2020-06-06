@@ -3,16 +3,16 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class errormessage : DbMigration
+    public partial class _1835 : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Vendors", "LoginErrorMsg", c => c.String());
+            AlterColumn("dbo.QuotesProvideds", "Price", c => c.Double(nullable: false));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Vendors", "LoginErrorMsg");
+            AlterColumn("dbo.QuotesProvideds", "Price", c => c.Double());
         }
     }
 }

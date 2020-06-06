@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using VendorsPortal.Migrations;
+//using VendorsPortal.Migrations;
 using VendorsPortal.Models;
 
 namespace VendorsPortal.Controllers

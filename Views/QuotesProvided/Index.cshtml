@@ -1,0 +1,49 @@
+﻿@model VendorsPortal.Models.QuotesProvided
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+	@Html.ActionLink("Create New", "Create")
+</p>
+<table class="table  table-bordered">
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.Quote.FirstName)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.Price)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.AdditionalInformation)
+		</th>
+		<th></th>
+	</tr>
+	 
+	@foreach (var quotesProvided in Model)
+	{
+<tr>
+	<td>
+		@quotesProvided.Quote.Email
+	</td>
+	<td>
+		@Html.DisplayFor(modelItem => quotesProvided.Quote.FirstName)
+	</td>
+	<td>
+		@Html.DisplayFor(modelItem => quotesProvided.Price)
+	</td>
+	<td>
+		@Html.DisplayFor(modelItem => quotesProvided.AdditionalInformation)
+	</td>
+	<td>
+		@Html.ActionLink("Edit", "Edit", new { id = quotesProvided.QuotesProvidedId }) |
+		@Html.ActionLink("Details", "Details", new { id = quotesProvided.QuotesProvidedId }) |
+		@Html.ActionLink("Delete", "Delete", new { id = quotesProvided.QuotesProvidedId })
+	</td>
+</tr>
+	}
+
+</table>

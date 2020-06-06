@@ -174,50 +174,28 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\QuotesController.cs" />
+    <Compile Include="Controllers\QuotesProvidedController.cs" />
     <Compile Include="Controllers\VendorsController.cs" />
     <Compile Include="Controllers\VendorTypesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004221853540_VendorsInitial.cs" />
-    <Compile Include="Migrations\202004221853540_VendorsInitial.designer.cs">
-      <DependentUpon>202004221853540_VendorsInitial.cs</DependentUpon>
+    <Compile Include="Migrations\202006061732303_Initial.cs" />
+    <Compile Include="Migrations\202006061732303_Initial.designer.cs">
+      <DependentUpon>202006061732303_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004221902052_UpdateDb.cs" />
-    <Compile Include="Migrations\202004221902052_UpdateDb.designer.cs">
-      <DependentUpon>202004221902052_UpdateDb.cs</DependentUpon>
+    <Compile Include="Migrations\202006061735514_1835.cs" />
+    <Compile Include="Migrations\202006061735514_1835.designer.cs">
+      <DependentUpon>202006061735514_1835.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004242044482_Area.cs" />
-    <Compile Include="Migrations\202004242044482_Area.designer.cs">
-      <DependentUpon>202004242044482_Area.cs</DependentUpon>
+    <Compile Include="Migrations\202006061815116_1915.cs" />
+    <Compile Include="Migrations\202006061815116_1915.designer.cs">
+      <DependentUpon>202006061815116_1915.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004261420020_NewDimension.cs" />
-    <Compile Include="Migrations\202004261420020_NewDimension.designer.cs">
-      <DependentUpon>202004261420020_NewDimension.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004271335485_Cleanslate.cs" />
-    <Compile Include="Migrations\202004271335485_Cleanslate.designer.cs">
-      <DependentUpon>202004271335485_Cleanslate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004271735005_VdA.cs" />
-    <Compile Include="Migrations\202004271735005_VdA.designer.cs">
-      <DependentUpon>202004271735005_VdA.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004282036021_password.cs" />
-    <Compile Include="Migrations\202004282036021_password.designer.cs">
-      <DependentUpon>202004282036021_password.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004282129570_errormessage.cs" />
-    <Compile Include="Migrations\202004282129570_errormessage.designer.cs">
-      <DependentUpon>202004282129570_errormessage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005011510039_fix4.cs" />
-    <Compile Include="Migrations\202005011510039_fix4.designer.cs">
-      <DependentUpon>202005011510039_fix4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005021951586_cleanup.cs" />
-    <Compile Include="Migrations\202005021951586_cleanup.designer.cs">
-      <DependentUpon>202005021951586_cleanup.cs</DependentUpon>
+    <Compile Include="Migrations\202006061821076_1920.cs" />
+    <Compile Include="Migrations\202006061821076_1920.designer.cs">
+      <DependentUpon>202006061821076_1920.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -226,10 +204,13 @@
     <Compile Include="Models\FileType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Quote.cs" />
+    <Compile Include="Models\QuotesProvided.cs" />
     <Compile Include="Models\Vendor.cs" />
     <Compile Include="Models\VendorType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\QuotesProvidedViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\all.css" />
@@ -325,6 +306,17 @@
     <Content Include="webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\_Secure.cshtml" />
+    <Content Include="Views\Quotes\Create.cshtml" />
+    <Content Include="Views\Quotes\Delete.cshtml" />
+    <Content Include="Views\Quotes\Details.cshtml" />
+    <Content Include="Views\Quotes\Edit.cshtml" />
+    <Content Include="Views\Quotes\Index.cshtml" />
+    <Content Include="Views\QuotesProvided\Create.cshtml" />
+    <Content Include="Views\QuotesProvided\Delete.cshtml" />
+    <Content Include="Views\QuotesProvided\Details.cshtml" />
+    <Content Include="Views\QuotesProvided\Edit.cshtml" />
+    <Content Include="Views\QuotesProvided\Index.cshtml" />
+    <Content Include="Views\Quotes\QuotesProvided.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -344,35 +336,17 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004221853540_VendorsInitial.resx">
-      <DependentUpon>202004221853540_VendorsInitial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006061732303_Initial.resx">
+      <DependentUpon>202006061732303_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004221902052_UpdateDb.resx">
-      <DependentUpon>202004221902052_UpdateDb.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006061735514_1835.resx">
+      <DependentUpon>202006061735514_1835.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004242044482_Area.resx">
-      <DependentUpon>202004242044482_Area.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006061815116_1915.resx">
+      <DependentUpon>202006061815116_1915.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004261420020_NewDimension.resx">
-      <DependentUpon>202004261420020_NewDimension.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004271335485_Cleanslate.resx">
-      <DependentUpon>202004271335485_Cleanslate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004271735005_VdA.resx">
-      <DependentUpon>202004271735005_VdA.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004282036021_password.resx">
-      <DependentUpon>202004282036021_password.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004282129570_errormessage.resx">
-      <DependentUpon>202004282129570_errormessage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005011510039_fix4.resx">
-      <DependentUpon>202005011510039_fix4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005021951586_cleanup.resx">
-      <DependentUpon>202005021951586_cleanup.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006061821076_1920.resx">
+      <DependentUpon>202006061821076_1920.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
