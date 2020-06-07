@@ -11,33 +11,43 @@ namespace VendorsPortal.Models
     {
         public int QuoteId { get; set; }
 
+        [StringLength(14)]
+        [Display(Name = "First name")]
+        [Required(ErrorMessage = "Please provide your first name")]
         public string FirstName { get; set; }
 
+       
+        [StringLength(14)]
+        [Display(Name = "Last name")]
+        [Required(ErrorMessage = "Please provide your last name")]
         public string LastName { get; set; }
 
-
-        [Display(Name = "Telephone Number ")]
-        [Required(ErrorMessage = "Please Provide Your Telephone Number")]
+        [StringLength(11)]
+        [Display(Name="Telephone number")]
+        [Required(ErrorMessage="Please provide your telephone number")]
         public string Telephone { get; set; }
 
 
-        [Display(Name = "Email Address")]
-        [Required(ErrorMessage = "Please Provide Your Email Address")]
+        [StringLength(15)]
+        [Display(Name = "Email address")]
+        [Required(ErrorMessage = "Please provide your email address")]
         public string Email { get; set; }
 
+        [StringLength(12)]
+        [Display(Name = "Type of event")]
+        [Required(ErrorMessage = "Please specify the event type")]
+        public string EventType { get; set; }
 
-        public string EventType { get; set; }   
-
-
+        [StringLength(40)]
+        [Display(Name = "Brief description of your event")]
         public string BriefDescription { get; set; }
 
-        public bool Budget { get; set; }
-
-
+      
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? EventDate { get; set; }
 
+        [Display(Name ="Event date confirmed?")]
         public bool DateConfirmed { get; set; }
 
         public string ContactFullName

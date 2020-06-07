@@ -4,17 +4,53 @@
 }
 <br />
 <body>
+
+
+
+
+
+
+
 	<div class="container">
-		@if (Session["vendorId"] != null)
+		@*@if (Session["vendorId"] != null)
 		{
 			@Html.ActionLink("Profile", "Details1", "Home", new { id = Model.FirstOrDefault()?.VendorId ?? 0 /* Null case*/}, new { @class = "btn btn-default" })
-		}
+		}*@
+
+
+		<ul class="nav nav-pills">
+			@if (Session["vendorId"] != null)
+			{
+
+			<li role="presentation" class="active">
+				@Html.ActionLink("Profile", "Details1", "Home", new { id = Model.FirstOrDefault()?.VendorId ?? 0 /* Null case*/}, new { @class = "btn btn-default" })
+			</li>
+			}
+
+			<li role="presentation"><a href="#"></a></li>
+			<li role="presentation"><a href="#"></a></li>
+		</ul>
+
+
+
+
+
+
+
 	</div>
+
+	<br />
+
 	<div class="container">
 		<div class="jumbotron jumbotron-test">
+
 		</div>
 	</div>
 	<br />
+
+
+
+
 	<div class="jumbotron">
 		@using (Html.BeginForm("Index", "Home", FormMethod.Get))
 		{
@@ -22,7 +58,7 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="form-group">
-							@Html.DropDownList("VendorTypeId", null, string.Empty, htmlAttributes: new { @class = "form-control", @style = "width:300px;" })
+							<strong>	@Html.DropDownList("VendorTypeId", null, string.Empty, htmlAttributes: new { @class = "form-control", @style = "width:300px;" })</strong>
 						</div>
 					</div>
 					<div class="col-md-4">

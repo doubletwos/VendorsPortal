@@ -5,7 +5,7 @@
 
 	<body>
 
-		<table class="table table-striped table-hover table-condensed">
+		<table class="table table-striped table-hover table-condensed table-bordered">
 			<tr class="info">
 				<th>Quote ID</th>
 				<th>Customer Name </th>
@@ -19,39 +19,42 @@
 
 			@foreach (var quoted in Model.Quotes)
 			{
-				<tr>
-					<td>@quoted.QuoteId </td>
-					<td>@quoted.ContactFullName</td>
-					<td>@quoted.EventType</td>
-					<td>@quoted.EventDate</td>
-					<td>@quoted.Email</td>
-					<td class="warning">
-						@if (quoted.QuotesProvided != null)
-						{
-							<p>@quoted.QuotesProvided.Price</p>
-						}
-						else
-						{
-							<p>Awaiting Quotation</p>
-						}
-					</td>
-					<td>
-						@if (quoted.QuotesProvided != null)
-						{
-							<p>Quote already Provided</p>
-						}
-						else
-						{
-							@Html.ActionLink("Respond", "Create", "QuotesProvided", new { id = quoted.QuoteId }, null)
-						}
-					</td>
-					@*<td>
-						@Html.ActionLink("Edit", "Edit", new { id = quoted.QuoteId }) |
-						@Html.ActionLink("Details", "Details", new { id = quoted.QuoteId }) |
-						@Html.ActionLink("Delete", "Delete", new { id = quoted.QuoteId })|
-						@Html.ActionLink("Respond", "Create", "QuotesProvided", new { id = quoted.QuoteId }, null)
-					</td>*@
-				</tr>
+		<tr class="active">
+			<td><strong>@quoted.QuoteId</strong> </td>
+			<td><strong>@quoted.ContactFullName</strong></td>
+			<td><strong>@quoted.EventType</strong></td>
+			<td><strong>@quoted.EventDate</strong></td>
+			<td><strong>@quoted.Email</strong></td>
+			<td>
+				@if (quoted.QuotesProvided != null)
+				{
+
+					<p> <strong>&#x20a6; @quoted.QuotesProvided.Price</strong></p>
+
+				}
+				else
+				{
+			<p><strong>Awaiting Quotation</strong></p>
+				}
+				
+			</td>
+			<td>
+				@if (quoted.QuotesProvided != null)
+				{
+					<p><strong>Quote already Provided</strong></p>
+				}
+				else
+				{
+					@Html.ActionLink("Respond", "Create", "QuotesProvided", new { id = quoted.QuoteId }, null)
+				}
+			</td>
+			@*<td>
+			@Html.ActionLink("Edit", "Edit", new { id = quoted.QuoteId }) |
+			@Html.ActionLink("Details", "Details", new { id = quoted.QuoteId }) |
+			@Html.ActionLink("Delete", "Delete", new { id = quoted.QuoteId })|
+			@Html.ActionLink("Respond", "Create", "QuotesProvided", new { id = quoted.QuoteId }, null)
+		</td>*@
+		</tr>
 			}
 		</table>
 	</body>

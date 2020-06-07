@@ -27,58 +27,47 @@
 
 <div class="container">
 	<div class="jumbotron">
-		<div class="row">
-
-			<div class="col-md-3">
-				@Html.ActionLink("Home", "Index", "Home")
-			</div>
-			<div class="col-md-3">
-				@Html.ActionLink("Edit Profile", "Edit", new { id = Model.VendorId })
-			</div>
-			<div class="col-md-3">
-				@Html.ActionLink("Quotes", "QuotesProvided", "Quotes", new { id = Model.VendorId }, null)
-			</div>
-
-
-
-
-			<div class="col-md-3">
-				@Html.ActionLink("Something Useful", "Edit", new { id = Model.VendorId })
-			</div>
-
-
-		</div>
-		</div>
-
 		<br />
+		<ul class="nav nav-pills">
+			<li role="presentation" class="active">	@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "btn btn-default" })</li>
+			<li role="presentation" class="active">@Html.ActionLink("Edit Profile", "Edit", new { id = Model.VendorId }, new { @class = "btn btn-default" })</li>
+			<li role="presentation" class="active">@Html.ActionLink("Quotes", "QuotesProvided", "Quotes", new { id = Model.VendorId }, new { @class = "btn btn-default" })</li>
+		</ul>
+	</div>
 
 
 
-		<div class="row">
-			<div class="col-md-6">
-				<img src="~/File?id=@Model.Files.First(f => f.FileType == FileType.Avatar).FileId" alt="avatar" class="img-rounded" width="300" />
-			</div>
-			<div class="col-md-6">
-				<i class="fab fa-creative-commons-nd"></i> : @Html.DisplayFor(model => model.VendorType.VendorTypeName)
-				<hr />
-				<i class="fas fa-at"></i> :    <a href="mailto:#">@Html.DisplayFor(model => model.Email)</a>
-				<hr />
-				<i class="fas fa-mobile-alt"></i> : @Html.DisplayFor(model => model.VendorMobile)
-				<hr />
-				<i class="fas fa-phone-alt"></i> : @Html.DisplayFor(model => model.VendorTelephone)
-				<hr />
-				<i class="fas fa-map-marker-alt"></i> : @Html.DisplayFor(model => model.Area.AreaName)
-				<hr />
-				<i class="fas fa-user-tie"></i> : @Html.DisplayFor(model => model.ContactFullName)
-				<hr />
-				<i class="fas fa-calendar-alt"></i> : @Html.DisplayFor(model => model.RegistrationDate)
-				<hr />
-				<i class="fab fa-internet-explorer"></i> :
 
 
-			</div>
+	<br />
+
+
+
+	<div class="row">
+		<div class="col-md-6">
+			<img src="~/File?id=@Model.Files.First(f => f.FileType == FileType.Avatar).FileId" alt="avatar" class="img-rounded" width="300" />
+		</div>
+		<div class="col-md-6">
+			<i class="fab fa-creative-commons-nd"></i> : @Html.DisplayFor(model => model.VendorType.VendorTypeName)
+			<hr />
+			<i class="fas fa-at"></i> :    <a href="mailto:#">@Html.DisplayFor(model => model.Email)</a>
+			<hr />
+			<i class="fas fa-mobile-alt"></i> : @Html.DisplayFor(model => model.VendorMobile)
+			<hr />
+			<i class="fas fa-phone-alt"></i> : @Html.DisplayFor(model => model.VendorTelephone)
+			<hr />
+			<i class="fas fa-map-marker-alt"></i> : @Html.DisplayFor(model => model.Area.AreaName)
+			<hr />
+			<i class="fas fa-user-tie"></i> : @Html.DisplayFor(model => model.ContactFullName)
+			<hr />
+			<i class="fas fa-calendar-alt"></i> : @Html.DisplayFor(model => model.RegistrationDate)
+			<hr />
+			<i class="fab fa-internet-explorer"></i> :
+
+
 		</div>
 	</div>
+</div>
 
 
 

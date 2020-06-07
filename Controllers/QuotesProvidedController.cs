@@ -57,7 +57,7 @@ namespace VendorsPortal.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Quotes.Where(q => q.QuoteId == id).Include(b => b.Budget);
+                db.Quotes.Where(q => q.QuoteId == id);
 
                 quotesProvided.QuoteId = (int)id;
 
