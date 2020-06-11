@@ -1,0 +1,82 @@
+﻿@model VendorsPortal.Models.Message
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Message</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vendor.VendorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vendor.VendorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SendersEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SendersEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateReceived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateReceived)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MessageReceived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MessageReceived)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MessageSent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MessageSent)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MessageId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

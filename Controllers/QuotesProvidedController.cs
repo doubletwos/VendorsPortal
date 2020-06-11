@@ -90,7 +90,7 @@ namespace VendorsPortal.Controllers
         // POST: QuotesProvided/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "QuotesProvidedId,Price,AdditionalInformation,QuoteId")] QuotesProvided quotesProvided)
+        public ActionResult Edit(QuotesProvided quotesProvided)
         {
             if (ModelState.IsValid)
             {

@@ -170,10 +170,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AreasController.cs" />
+    <Compile Include="Controllers\BookingsController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\QuotesController.cs" />
     <Compile Include="Controllers\QuotesProvidedController.cs" />
     <Compile Include="Controllers\VendorsController.cs" />
@@ -209,13 +211,47 @@
     <Compile Include="Migrations\202006071405050_1504.designer.cs">
       <DependentUpon>202006071405050_1504.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006082101320_Messages.cs" />
+    <Compile Include="Migrations\202006082101320_Messages.designer.cs">
+      <DependentUpon>202006082101320_Messages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006091546266_1646.cs" />
+    <Compile Include="Migrations\202006091546266_1646.designer.cs">
+      <DependentUpon>202006091546266_1646.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006091618423_1718.cs" />
+    <Compile Include="Migrations\202006091618423_1718.designer.cs">
+      <DependentUpon>202006091618423_1718.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006101806089_Bookings.cs" />
+    <Compile Include="Migrations\202006101806089_Bookings.designer.cs">
+      <DependentUpon>202006101806089_Bookings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006101808484_1908.cs" />
+    <Compile Include="Migrations\202006101808484_1908.designer.cs">
+      <DependentUpon>202006101808484_1908.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006101820111_1919.cs" />
+    <Compile Include="Migrations\202006101820111_1919.designer.cs">
+      <DependentUpon>202006101820111_1919.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006102011213_2111.cs" />
+    <Compile Include="Migrations\202006102011213_2111.designer.cs">
+      <DependentUpon>202006102011213_2111.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006102141587_2241.cs" />
+    <Compile Include="Migrations\202006102141587_2241.designer.cs">
+      <DependentUpon>202006102141587_2241.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Area.cs" />
+    <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\File.cs" />
     <Compile Include="Models\FileType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Quote.cs" />
     <Compile Include="Models\QuotesProvided.cs" />
     <Compile Include="Models\Vendor.cs" />
@@ -329,6 +365,16 @@
     <Content Include="Views\QuotesProvided\Edit.cshtml" />
     <Content Include="Views\QuotesProvided\Index.cshtml" />
     <Content Include="Views\Quotes\QuotesProvided.cshtml" />
+    <Content Include="Views\Messages\Create.cshtml" />
+    <Content Include="Views\Messages\Delete.cshtml" />
+    <Content Include="Views\Messages\Details.cshtml" />
+    <Content Include="Views\Messages\Edit.cshtml" />
+    <Content Include="Views\Messages\Index.cshtml" />
+    <Content Include="Views\Bookings\Create.cshtml" />
+    <Content Include="Views\Bookings\Delete.cshtml" />
+    <Content Include="Views\Bookings\Details.cshtml" />
+    <Content Include="Views\Bookings\Edit.cshtml" />
+    <Content Include="Views\Bookings\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -368,6 +414,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006071405050_1504.resx">
       <DependentUpon>202006071405050_1504.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006082101320_Messages.resx">
+      <DependentUpon>202006082101320_Messages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006091546266_1646.resx">
+      <DependentUpon>202006091546266_1646.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006091618423_1718.resx">
+      <DependentUpon>202006091618423_1718.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006101806089_Bookings.resx">
+      <DependentUpon>202006101806089_Bookings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006101808484_1908.resx">
+      <DependentUpon>202006101808484_1908.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006101820111_1919.resx">
+      <DependentUpon>202006101820111_1919.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006102011213_2111.resx">
+      <DependentUpon>202006102011213_2111.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006102141587_2241.resx">
+      <DependentUpon>202006102141587_2241.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

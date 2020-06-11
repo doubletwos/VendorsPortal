@@ -80,5 +80,12 @@ namespace VendorsPortal.Models
 
         public virtual ICollection<Quote> Quotes { get; set; }
 
+
+        public virtual ICollection <Message> Messages { get; set; }
+
+        public virtual ICollection <Booking> Bookings { get; set; }
+
+
+
     }
 }

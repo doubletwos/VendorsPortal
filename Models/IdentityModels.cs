@@ -34,6 +34,8 @@ namespace VendorsPortal.Models
         public DbSet<Area> Areas { get; set; }
         public DbSet<Quote> Quotes { get; set; }
         public DbSet<QuotesProvided> QuotesProvided { get; set; }
+        public DbSet<Message> Messages { get; set; }    
+        public DbSet<Booking> Bookings { get; set; }
 
 
 

@@ -1,0 +1,93 @@
+﻿@model IEnumerable<VendorsPortal.Models.Message>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2></h2>
+
+<p>
+	@Html.ActionLink("Create New", "Create")
+</p>
+
+<ul class="nav nav-pills" role="tablist">
+	<li role="presentation" class="active"><a href="#">Messages <span class="badge"></span></a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+
+<table class="table table-hover table-responsive ">
+	<tr>
+		<th>
+			Sender
+		</th>
+		<th>
+			Subject
+		</th>
+
+		<th>
+			Date received
+		</th>
+
+
+
+	</tr>
+
+	
+
+
+
+	@foreach (var item in Model)
+	{
+<tr>
+
+
+	<td>
+
+
+
+		<strong>@Html.DisplayFor(modelItem => item.ContactFullName)</strong> <br />
+
+
+	</td>
+
+	<td>
+
+		<strong>@Html.DisplayFor(modelItem => item.Subject)</strong> <br />
+	</td>
+
+
+	<td>
+
+		<strong>@Html.DisplayFor(modelItem => item.DateReceived)</strong>
+	</td>
+
+
+	<td>
+
+		@Html.ActionLink("Reply", "Edit", new { id = item.MessageId }) |
+		@Html.ActionLink("Delete", "Delete", new { id = item.MessageId }) |
+		@Html.ActionLink("Read Message", "Details", new { id = item.MessageId })
+
+
+
+	</td>
+</tr>
+
+
+	
+	}
+
+
+
+
+</table>
+
+

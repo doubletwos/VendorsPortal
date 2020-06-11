@@ -7,29 +7,31 @@
 
 		<table class="table table-striped table-hover table-condensed table-bordered">
 			<tr class="info">
-				<th>Quote ID</th>
+
 				<th>Customer Name </th>
-				<th>Event Type</th>
+
 				<th>Event Date</th>
 				<th>Email Address</th>
+				<th>Status</th>
 				<th>Quoted Price</th>
-				<th></th>
+				<th>Next Action</th>
+
 			</tr>
 
 
 			@foreach (var quoted in Model.Quotes)
 			{
 		<tr class="active">
-			<td><strong>@quoted.QuoteId</strong> </td>
+		
 			<td><strong>@quoted.ContactFullName</strong></td>
-			<td><strong>@quoted.EventType</strong></td>
+		
 			<td><strong>@quoted.EventDate</strong></td>
 			<td><strong>@quoted.Email</strong></td>
 			<td>
 				@if (quoted.QuotesProvided != null)
 				{
-
-					<p> <strong>&#x20a6; @quoted.QuotesProvided.Price</strong></p>
+				<p><strong>Quote Provided</strong></p>
+					
 
 				}
 				else
@@ -41,7 +43,20 @@
 			<td>
 				@if (quoted.QuotesProvided != null)
 				{
-					<p><strong>Quote already Provided</strong></p>
+				<p> <strong>&#x20a6; @quoted.QuotesProvided.Price</strong></p>
+
+
+				}
+				else
+				{
+					<p><strong>&#x20a6; 0.00</strong></p>
+				}
+				
+			</td>
+			<td>
+				@if (quoted.QuotesProvided != null)
+				{
+					@Html.ActionLink("Convert to booking", "Create", "Bookings", new { id = quoted.QuoteId }, null)
 				}
 				else
 				{

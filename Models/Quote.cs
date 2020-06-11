@@ -28,7 +28,7 @@ namespace VendorsPortal.Models
         public string Telephone { get; set; }
 
 
-        [StringLength(15)]
+      
         [Display(Name = "Email address")]
         [Required(ErrorMessage = "Please provide your email address")]
         public string Email { get; set; }

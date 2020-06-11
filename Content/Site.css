@@ -43,9 +43,11 @@ textarea {
 
 
 
+/*Home Index*/
+
 
 #businessName {
-    color: dodgerblue;
+    color: red;
     font-size: 18px;
    padding-top:30px;
 }
@@ -87,10 +89,11 @@ textarea {
     background-color: whitesmoke;
 }
 
-.table {
+.table1{
     border-collapse: separate;
     border-spacing: 0 40px;
 }
+
 
 
 

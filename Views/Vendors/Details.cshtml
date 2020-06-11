@@ -28,10 +28,20 @@
 <div class="container">
 	<div class="jumbotron">
 		<br />
-		<ul class="nav nav-pills">
-			<li role="presentation" class="active">	@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "btn btn-default" })</li>
-			<li role="presentation" class="active">@Html.ActionLink("Edit Profile", "Edit", new { id = Model.VendorId }, new { @class = "btn btn-default" })</li>
-			<li role="presentation" class="active">@Html.ActionLink("Quotes", "QuotesProvided", "Quotes", new { id = Model.VendorId }, new { @class = "btn btn-default" })</li>
+		<ul class="nav nav-pills" role="tablist">
+			<li role="presentation" class="active">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "btn btn-default" })</li>
+			<li role="presentation" class="active">@Html.ActionLink("Quotes", "QuotesProvided", "Quotes", new { id = Model.VendorId }, new { @class = "btn btn-default" }) </li>
+			<li role="presentation" class="active">@Html.ActionLink("Messages", "Index", "Messages", new { id = Model.VendorId }, new { @class = "btn btn-default" }) </li>
+
+			<li role="presentation" class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+					SETTINGS <span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+					<li role="presentation" class="active">@Html.ActionLink("Edit Profile", "Edit", new { id = Model.VendorId }, new { @class = "btn btn-default" })</li>
+
+				</ul>
+			</li>
 		</ul>
 	</div>
 
