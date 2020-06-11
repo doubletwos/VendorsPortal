@@ -40,45 +40,62 @@ namespace VendorsPortal.Controllers
         }
 
         // GET: Bookings/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
-          
-            
-                return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            QuotesProvided quotesProvided = db.QuotesProvided.Find(id);
+            if (quotesProvided == null)
+            {
+                return HttpNotFound();
+            }
+
+            var booking = new Booking()
+            {
+                FirstName = quotesProvided.Quote.FirstName,
+                LastName = quotesProvided.Quote.LastName,
+                Telephone = quotesProvided.Quote.Telephone,
+                Email = quotesProvided.Quote.Email,
+                EventType = quotesProvided.Quote.EventType,
+                EventDate = quotesProvided.Quote.EventDate,
+                BookingDate = DateTime.Now,
+                Price = quotesProvided.Price,
+                IsBooked = true
+            };
+
+
+            return View(booking);
             
         }
 
 
 
 
-   
 
 
-        // POST: Bookings/Create
+
+        //// POST: Bookings/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(int id)
+        public ActionResult Create(Booking booking, int? id)
         {
+           
+                var qp = db.QuotesProvided.SingleOrDefault(c => c.QuoteId == id);
+
             if (ModelState.IsValid)
             {
+                booking.QuoteId = (int)id;
 
-
-                Booking booking = new Booking()
-                { QuoteId = id,
-                 
-                
-                
-                
-                
-                
-                };
                 db.Bookings.Add(booking);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            return View();
+            return View(booking);
         }
+
+
 
         // GET: Bookings/Edit/5
         public ActionResult Edit(int? id)
@@ -95,12 +112,11 @@ namespace VendorsPortal.Controllers
             return View(booking);
         }
 
+
         // POST: Bookings/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BookingId,FirstName,LastName,Telephone,Email,EventType,EventDate,BookingDate,Price,IsBooked")] Booking booking)
+        public ActionResult Edit(Booking booking)
         {
             if (ModelState.IsValid)
             {
